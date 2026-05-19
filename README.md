@@ -1,7 +1,5 @@
 # Documentatie Proiect Three.js — Sistem Solar Interactiv
 
-## Autor
-[Dahrouj_Joudi_grupa1116]
 
 ## Descriere generala
 Aplicatia reprezinta o simulare interactiva a Sistemului Solar,
@@ -14,7 +12,7 @@ controla parametrii animatiei prin interfata dat.GUI.
 ## Structura fisierelor
 
 ```
-Dahrouj_Joudi_grupa1116/
+Dahrouj_Joudi/
 ├── index.html          ← aplicatia principala (tot codul)
 ├── three.js            ← libraria Three.js r101
 ├── three.min.js        ← versiunea minificata Three.js
@@ -27,16 +25,16 @@ Dahrouj_Joudi_grupa1116/
 
 ---
 
-## Elemente tehnice implementate (Baremul de 4p)
+## Elemente tehnice implementate
 
-### 1. Scena de baza (3p)
+### 1. Scena de baza
 - Scena Three.js cu WebGLRenderer, PerspectiveCamera
 - Soare central cu geometrie SphereGeometry (raza 12)
 - 8 planete (Mercur, Venus, Terra, Marte, Jupiter, Saturn, Uranus, Neptun)
 - Orbite vizibile desenate cu LineLoop si BufferGeometry
 - Inele pentru Saturn (RingGeometry cu UV-uri ajustate)
 
-### 2. Materiale, Texturi Complexe si Lumini (1p)
+### 2. Materiale, Texturi Complexe si Lumini
 Texturi procedurale generate cu Canvas API:
 - **Soare**: gradient radial galben-portocaliu + pete solare
 - **Terra**: oceane albastre + continente verzi + nori semitransparenti
@@ -55,7 +53,7 @@ Materiale:
 - `MeshBasicMaterial` pentru Soare si halo
 - `PointsMaterial` pentru particule (stele, asteroizi)
 
-### 3. Geometrii Proprii Complexe (1p)
+### 3. Geometrii Proprii Complexe
 **Asteroid Belt** (centura intre Marte si Jupiter):
 - `BufferGeometry` creat manual cu `setAttribute`
 - 4000 particule pozitionate procedural in inel
@@ -63,7 +61,7 @@ Materiale:
 - Coordonate calculate cu functii trigonometrice
 - Culori per-vertex (gri-maronii variabile)
 
-### 4. Particule (1p)
+### 4. Particule
 **Camp de stele** (12,000 particule):
 - `BufferGeometry` cu pozitii distribuite sferic
 - Raza 600-1400 unitati
@@ -71,7 +69,7 @@ Materiale:
 - Marimea variabila per-particula
 - Distributie uniforma pe sfera (algoritm phi/theta)
 
-### 5. Manipulare cu Mouse si Tastatura (1p)
+### 5. Manipulare cu Mouse si Tastatura
 **Mouse:**
 - Drag stanga = rotire camera (OrbitControls)
 - Scroll = zoom in/out
@@ -83,7 +81,7 @@ Materiale:
 - `P` = toggle pauza animatie
 - `+`/`-` = crestere/scadere viteza globala
 
-### 6. Controale dat.GUI (1p)
+### 6. Controale dat.GUI
 Panoul GUI (dreapta sus) ofera:
 - **Viteza animatie** (slider 0-5)
 - **Pauza** (checkbox)
@@ -93,7 +91,7 @@ Panoul GUI (dreapta sus) ofera:
 
 ---
 
-## Complexitate si Coerenta (2p)
+## Complexitate si Coerenta
 - Tema coerenta: sistem solar cu fizica simplificata
 - Pivoti de orbita separati per planeta (Object3D nested hierarchy)
 - Unghi initial diferit per planeta (distributie uniforma)
